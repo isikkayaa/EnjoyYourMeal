@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="anasayfaFragment"
+            type="com.example.enjoyyourmeal.ui.fragment.AnasayfaFragment" />
+        <variable
+            name="orderAdapter"
+            type="com.example.enjoyyourmeal.ui.adapter.OrderAdapter">
+
+        </variable>
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.AnasayfaFragment">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            style="@style/Widget.Material3.FloatingActionButton.Large.Primary"
+            android:layout_width="88dp"
+            android:layout_height="86dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="40dp"
+            android:clickable="true"
+            android:onClick="@{() -> anasayfaFragment.fabTikla(fab)}"
+            android:src="@drawable/sepet_resim"
+            android:tint="#DABEBE"
+            app:fabSize="auto"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewHosgeldin"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/alegreya"
+            android:text="Merhaba Işık!"
+            android:textColor="#DE9696"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvIlk"
+            android:layout_width="0dp"
+            android:layout_height="625dp"
+            android:layout_marginTop="5dp"
+            android:adapter="@{orderAdapter}"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:spanCount="2" />
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="52dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="68dp"
+            android:layout_marginEnd="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/filtrele_resim" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
